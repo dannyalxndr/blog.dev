@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('pages.main_page');
+});
+
+Route::get('/resume', function()
+{
+	return View::make('pages.resume.resume');
+});
+
+Route::get('/portfolio', function()
+{
+	return View::make('pages.portfolio.portfolio');
 });
