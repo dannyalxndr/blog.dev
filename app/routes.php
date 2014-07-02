@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('pages.main_page');
-});
+// Route::get('/', 'HomeController@showWelcome');
+// Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
-Route::get('/resume', function()
-{
-	return View::make('pages.resume.resume');
-});
+Route::get('/', 'HomeController@mainPage');
 
-Route::get('/portfolio', function()
-{
-	return View::make('pages.portfolio.portfolio');
-});
+Route::get('/sayHello/{name}', 'HomeController@sayHello');
+
+Route::resource('posts', 'PostsController');
+
+
+
+
+
+

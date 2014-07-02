@@ -15,9 +15,54 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	// public function showWelcome()
+	// {
+	// 	//return View::make('hello');
+	// 	return Redirect::action('HomeController@sayHello', array('test'));
+	// }
+
+	// public function sayHello($name) {
+	// 	$data = array(
+
+	// 	)
+	// }
+
+	public function mainPage() 
 	{
-		return View::make('hello');
+		return View::make('pages.main.main');	
 	}
 
+	public function resume() 
+	{
+		return View::make('pages.resume.resume');
+	}
+
+	public function sayHello($name) 
+	{
+			$data = array(
+				'name' => $name
+			);
+
+			return View::make('pages.my-first-view')->with($data);		
+	}
+
+	public function showWelcome()
+	{
+		return Redirect::action('HomeController@sayHello', ['Codeup']);
+	}
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
