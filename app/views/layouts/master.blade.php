@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Danny Jimenez</title>
+    <title>dannyalxndr</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
@@ -18,6 +18,34 @@
 </head>
 <body>
 
+	<!-- Static navbar -->
+    <div class="navbar second-navbar-inverse navbar-static-top">
+		<div class="container">
+       		<div class="navbar-header">
+          	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+          	</button>
+          	<div class="navbar-collapse collapse">
+          		<ul class="nav navbar-nav navbar-left">
+					@if (Auth::check())
+	          			<li>{{ link_to_action('HomeController@logout', 'Log Out') }}</li>
+	          			<li><a class="navbar-brand" href="index">{{ Auth::user()->email }}</a></li>			
+					@else
+						<li>{{ link_to_action('HomeController@showLogin', 'Login') }}</li>
+					@endif
+				</ul>
+			</div>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
     <!-- Static navbar -->
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
@@ -27,17 +55,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          @if (Auth::check())
-          	<a class="navbar-brand" href="index">{{ Auth::user()->email }}</a>
-          @endif
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
           	@if (Auth::check())
 				<li>{{ link_to_action('PostsController@create', 'Create Post') }}</li>
-				<li>{{ link_to_action('HomeController@logout', 'Log Out') }}</li>
-			@else
-				<li>{{ link_to_action('HomeController@showLogin', 'Login') }}</li>
 			@endif
             <li><a href="about">About</a></li>
             <li><a href="portfolio">Portfolio</a></li>
