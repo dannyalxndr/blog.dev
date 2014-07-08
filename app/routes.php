@@ -20,6 +20,11 @@ Route::get('/sayHello/{name}', 'HomeController@sayHello');
 
 Route::resource('posts', 'PostsController');
 
+Route::get('/login', 'HomeController@showLogin');
+Route::post('/login', 'HomeController@doLogin');
+Route::get('/logout', 'HomeController@logout');
+
+Route::get('/register', 'HomeController@showRegistration');
 
 
 
