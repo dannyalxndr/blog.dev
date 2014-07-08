@@ -2,6 +2,16 @@
 
 class PostsController extends BaseController {
 
+	public function __construct()
+	{
+	    // call base controller constructor
+	    parent::__construct();
+
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	}
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -10,7 +20,13 @@ class PostsController extends BaseController {
 	public function index()
 	{
 		
-		$posts = Post::paginate(4);
+		$posts = Post::with('user')->paginate(4);
+
+		if (Input::has('search')) {
+			$q = Input::get('search');
+	    	$posts = Post::with('user')->where('title', 'LIKE', '%'. $q .'%')->get();  
+		}
+
 		return View::make('posts.index')->with('posts', $posts);
 
 	}
@@ -22,7 +38,6 @@ class PostsController extends BaseController {
 	 */
 	public function create()
 	{	
-		// App::abort(404);
 		return View::make('posts.create-edit');
 	}
 
@@ -46,6 +61,8 @@ class PostsController extends BaseController {
 	{
 		$post = new Post();
 
+		$post->user_id = Auth::user()->id;
+
 		if ($id != null)
 		{
 			$post = Post::find($id);
@@ -64,6 +81,14 @@ class PostsController extends BaseController {
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->save();
+
+
+			if (Input::hasFile('image') && Input::file('image')->isValid()) 
+			{
+				$post->addUploadedImage(Input::file('image'));
+				$post->save();
+			}
+
 
 			Session::flash('successMessage', 'You were successful');
 
