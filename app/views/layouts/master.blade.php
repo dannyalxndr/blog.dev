@@ -27,20 +27,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index">Danny Jimenez</a>
+          @if (Auth::check())
+          	<a class="navbar-brand" href="index">{{ Auth::user()->email }}</a>
+          @endif
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+          	@if (Auth::check())
+				<li>{{ link_to_action('PostsController@create', 'Create Post') }}</li>
+				<li>{{ link_to_action('HomeController@logout', 'Log Out') }}</li>
+			@else
+				<li>{{ link_to_action('HomeController@showLogin', 'Login') }}</li>
+			@endif
             <li><a href="about">About</a></li>
             <li><a href="portfolio">Portfolio</a></li>
             <li><a href="resume">Resume</a></li>
             <li><a href="/posts">Blog</a></li>
             <li><a href="contact">Contact</a></li>
+            
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
+    
     <div>
 	    @if (Session::has('successMessage'))
 	    	<div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
@@ -70,7 +79,8 @@
                     <h4>My Links</h4>
                     <p>
                     	<a href="https://www.linkedin.com/profile/view?id=344653707&trk=nav_responsive_tab_profile_pic">Linkedin</a><br/>
-                    	<a href="http://www.facebook.com/dannyalxndrwrites">Facebook</a><br>
+                    	<a href="https://github.com/dannyalxndr?tab=repositories">GitHub</a><br/>
+
                         <a href="http://www.twitter.com/dannyalxndr">Twitter</a><br/>
                         <a href="http://www.instagram.com/dannyalxndr_">Instagram</a><br/>
                         
