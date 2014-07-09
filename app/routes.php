@@ -24,7 +24,16 @@ Route::get('/login', 'HomeController@showLogin');
 Route::post('/login', 'HomeController@doLogin');
 Route::get('/logout', 'HomeController@logout');
 
-Route::get('/register', 'HomeController@showRegistration');
+// Route::get('/register', 'HomeController@showRegistration');
+
+Route::get('register', function(){
+	// return View::make('register'); 
+});
+
+Route::post('register_action', function(){
+    $obj = new RegisterController() ;
+    return $obj->store();
+});
 
 
 

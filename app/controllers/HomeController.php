@@ -15,9 +15,9 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showRegistration()
+	public function showRegister()
 	{
-		return View::make('registration');
+		return View::make('register');
 	}
 
 	public function doRegistration()

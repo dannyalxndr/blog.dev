@@ -31,9 +31,10 @@
           		<ul class="nav navbar-nav navbar-left">
 					@if (Auth::check())
 	          			<li>{{ link_to_action('HomeController@logout', 'Log Out') }}</li>
-	          			<li><a class="navbar-brand" href="index">{{ Auth::user()->email }}</a></li>			
+	          			<li><a class="navbar-brand" href="index">{{ Auth::user()->username }}</a></li>			
 					@else
 						<li>{{ link_to_action('HomeController@showLogin', 'Login') }}</li>
+						<li>{{ link_to_action('HomeController@showRegister','Register') }}</li>
 					@endif
 				</ul>
 			</div>
@@ -63,9 +64,8 @@
 			@endif
             <li><a href="about">About</a></li>
             <li><a href="portfolio">Portfolio</a></li>
-            <li><a href="resume">Resume</a></li>
             <li><a href="/posts">Blog</a></li>
-            <li><a href="contact">Contact</a></li>
+            <li><a href="contact">poetry</a></li>
             
           </ul>
         </div><!--/.nav-collapse -->
