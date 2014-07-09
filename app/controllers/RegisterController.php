@@ -33,7 +33,7 @@ class RegisterController extends \BaseController {
 	{
 	    $data =  Input::except(array('_token'));
         $rule  =  array(
-                'username'       => 'required|unique:users',
+                'username'   => 'required|unique:users',
                 'email'      => 'required|email|unique:users',
                 'password'   => 'required|min:6|same:cpassword',
                 'cpassword'  => 'required|min:6'
@@ -47,7 +47,7 @@ class RegisterController extends \BaseController {
         }
         else
         {
-            Register::saveFormData(Input::except(array('_token','cpassword')));
+            Register::saveFormData(Input::except(array('cpassword')));
 			return Redirect::to('posts')->withMessage('Data inserted');
         }
 	}
