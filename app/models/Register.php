@@ -8,8 +8,6 @@ class Register extends Eloquent {
     // model function to store form data to database
     public static function saveFormData($data)
     {
-    	$user->password = Hash::make();
         DB::table('users')->insert($data);
     }
- 
 }
