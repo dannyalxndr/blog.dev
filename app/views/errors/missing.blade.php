@@ -1,7 +1,6 @@
-@extends('layouts.master')
-
-@section('content')
-	
+<html>
+<head>
+	<title>uh oh..</title>
 	<style>
 		img {
 			position: absolute;
@@ -17,9 +16,15 @@
 		}
 
 	</style>
-
+</head>
+<body>
 	<img src="/assets/img/404_error_02.jpg"><br>
 	<h3>Wow, look at what you did..</h3>
+</body>
+</html>
+	
+	
+
+	
 
 
-@stop
