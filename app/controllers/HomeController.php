@@ -49,7 +49,10 @@ class HomeController extends BaseController {
 		Auth::logout();
 		return Redirect::action('PostsController@index');
 	}
-
+	public function konamiPage() 
+	{
+		return View::make('pages.main.konami');	
+	}
 	public function mainPage() 
 	{
 		return View::make('pages.main.main');	
