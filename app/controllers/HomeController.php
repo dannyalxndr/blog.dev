@@ -55,7 +55,7 @@ class HomeController extends BaseController {
 	}
 	public function mainPage() 
 	{
-		return View::make('pages.main.main');	
+		return View::make('pages.main.index');	
 	}
 
 	public function resume() 

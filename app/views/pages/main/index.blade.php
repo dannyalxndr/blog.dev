@@ -1,61 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+@extends('layouts.master')
 
-    <title>SATX - Daniel Jimenez</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
-		
-	<!-- Menu -->
-	<nav class="menu" id="theMenu">
-		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">DSGN NYC</a></h1>
-			<i class="fa fa-times menu-close"></i>
-			<a href="#home" class="smoothScroll">Home</a>
-			<a href="#about" class="smoothScroll">About</a>
-			<a href="#portfolio" class="smoothScroll">Portfolio</a>
-			<a href="#services" class="smoothScroll">Services</a>
-			<a href="#contact" class="smoothScroll">Contact</a>
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-dribbble"></i></a>
-			<a href="#"><i class="fa fa-envelope"></i></a>
-		</div>
-		
-		<!-- Menu button -->
-		<div id="menuToggle"><i class="fa fa-bars"></i></div>
-	</nav>
+@section('content')
 
 	<section id="home" name="home"></section>
 	<div id="headerwrap">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
-					<h1>DESIGN STUDIO</h1>
+					<h1>DANNY JIMENEZ</h1>
 				</div>
 			</div><! --/row -->
 		</div><! --/container -->
@@ -66,21 +18,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 name">
-					<img class="img-responsive" src="assets/img/pic.png">
-					<p>DANIEL PRATT</p>
+					<img id="picOfMe" class="img-responsive" src="assets/img/me_04.jpeg">
 					<div class="name-label"></div>
 				</div><! --/col-lg-4-->
 				<div class="col-lg-8 name-desc">
-					<h2>TALENTED DESIGNER & <br/>FRONT-END DEVELOPER <br/>ENJOYING THE BEAUTIFUL NYC</h2>
+					<h2>FULL STACK <br>WEB DEVELOPER & <br/>ENJOYING SAN ANTONIO LIVIN</h2>
 					<div class="name-zig"></div>
 					
 					<div class="col-md-6">
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-						<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<p>About me pages are almost ridiculous to write, but I guess I'll give this a shot. When you first meet a person you want to know the basics.
+							I can tell you that I am 23 years old, just recently have been imersed into Web Development, am one of 8 boys in my family, I was born and raised 
+							in San Antonio and am always looking for new things to do and new places to go. I created this website to put myself out there, show the world what I can do and make new contacts. </p>
 					</div>
 					<div class="col-md-6">
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-						<p> Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p>
+						<p> I have tons of hobbies, maybe too many.
+							For example: I learned how to dance through youtube (because I had too much time), I am a writer and post my work through my instagram @dannyalxndr_ ,
+							I am a musician and love playing with my friends and family, I like to draw, paint.. honestly I just love art. There's so many forms of expression
+							and I'm always searching for new ways to express myself!</p>
 					</div>
 					
 				</div><! --/col-lg-8-->
@@ -92,110 +46,24 @@
 	<! -- ABOUT SEPARATOR -->
 	<div class="sep about" data-stellar-background-ratio="0.5"></div>
 	
-	<! -- PORTFOLIO SECTION -->
-	<section id="portfolio" name="portfolio"></section>
-	<div id="portfoliowrap">
-		<div class="container">
-			<div class="row">
-				<h1>SOME OF MY LATEST WORKS</h1>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-					<div class="project-wrapper">
-	                    <div class="project">
-	                        <div class="photo-wrapper">
-	                            <div class="photo">
-	                            	<a class="fancybox" href="assets/img/portfolio/port04.jpg"><img class="img-responsive" src="assets/img/portfolio/port04.jpg" alt=""></a>
-	                            </div>
-	                            <div class="overlay"></div>
-	                        </div>
-	                    </div>
-	                </div>
-				</div><!-- col-lg-4 -->
-				
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-					<div class="project-wrapper">
-	                    <div class="project">
-	                        <div class="photo-wrapper">
-	                            <div class="photo">
-	                            	<a class="fancybox" href="assets/img/portfolio/port05.jpg"><img class="img-responsive" src="assets/img/portfolio/port05.jpg" alt=""></a>
-	                            </div>
-	                            <div class="overlay"></div>
-	                        </div>
-	                    </div>
-	                </div>
-				</div><!-- col-lg-4 -->
-				
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-					<div class="project-wrapper">
-	                    <div class="project">
-	                        <div class="photo-wrapper">
-	                            <div class="photo">
-	                            	<a class="fancybox" href="assets/img/portfolio/port06.jpg"><img class="img-responsive" src="assets/img/portfolio/port06.jpg" alt=""></a>
-	                            </div>
-	                            <div class="overlay"></div>
-	                        </div>
-	                    </div>
-	                </div>
-				</div><!-- col-lg-4 -->
-			</div><!-- /row -->
 	
-			<div class="row mt">
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-					<div class="project-wrapper">
-	                    <div class="project">
-	                        <div class="photo-wrapper">
-	                            <div class="photo">
-	                            	<a class="fancybox" href="assets/img/portfolio/port01.jpg"><img class="img-responsive" src="assets/img/portfolio/port01.jpg" alt=""></a>
-	                            </div>
-	                            <div class="overlay"></div>
-	                        </div>
-	                    </div>
-	                </div>
-				</div><!-- col-lg-4 -->
-				
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-					<div class="project-wrapper">
-	                    <div class="project">
-	                        <div class="photo-wrapper">
-	                            <div class="photo">
-	                            	<a class="fancybox" href="assets/img/portfolio/port02.jpg"><img class="img-responsive" src="assets/img/portfolio/port02.jpg" alt=""></a>
-	                            </div>
-	                            <div class="overlay"></div>
-	                        </div>
-	                    </div>
-	                </div>
-				</div><!-- col-lg-4 -->
-				
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-					<div class="project-wrapper">
-	                    <div class="project">
-	                        <div class="photo-wrapper">
-	                            <div class="photo">
-	                            	<a class="fancybox" href="assets/img/portfolio/port03.jpg"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt=""></a>
-	                            </div>
-	                            <div class="overlay"></div>
-	                        </div>
-	                    </div>
-	                </div>
-				</div><!-- col-lg-4 -->
-			</div><!-- /row -->
-		</div><! --/container -->
 		<div class="container">
 			<div class="row mt centered">
 				<h1>MY DESIGN PROCESS</h1>
 				<div class="col-lg-4 proc">
 					<i class="fa fa-coffee"></i>
-					<h3>The Meeting</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+					<h3>Brainstorm Madness</h3>
+					<p>Everyone has their own way to have a light bulb effect above their heads. Mine involves sitting down in a relaxing chair, completely by myself, listening to music. This formula allows my brain to create new ideas, and begin the next step.</p>
 				</div>
 				<div class="col-lg-4 proc">
 					<i class="fa fa-cogs"></i>
-					<h3>The Ideas</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+					<h3>The Idea</h3>
+					<p>Once I have a solid foundation for an idea I'd like to work with, I begin with paper and pencil. Anything and everything gets thrown onto my sketch book, and a lot more into the trash bin haha. This step is ongoing until I feel satisfied with my draft.</p>
 				</div>
 				<div class="col-lg-4 proc">
 					<i class="fa fa-heart"></i>
 					<h3>The Product</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+					<p>Hard work and a lot of time goes into making a great and friendly product. Understanding that the product can never be perfect allows me and the client to always move forward with newer ideas and a better experience. The future is always my aim.</p>
 				</div>
 				
 			</div><! --/row -->
@@ -203,153 +71,55 @@
 	</div><! --/Portfoliowrap -->
 
 	<! -- PORTFOLIO SEPARATOR -->
-	<div class="sep portfolio" data-stellar-background-ratio="0.5"></div>
 	
-	
-	<! -- SERVICE SECTION -->
-	<section id="services" name="services"></section>
-	<div id="servicewrap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8-offset-2 centered">
-					<h1>AN OVERVIEW OF MY SERVICES</h1>
-					<h3>I'll do all the work for you</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div><!-- /col-lg-8 -->
-			</div><! --/row -->
-			
-			<div class="row mt">
-				<div class="col-lg-3 service">
-					<i class="fa fa-star"></i><p>PREMIUM QUALITY<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-				<div class="col-lg-3 service">
-					<i class="fa fa-cloud"></i><p>CLOUD SERVICES<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-				<div class="col-lg-3 service">
-					<i class="fa fa-shield"></i><p>SECURED ACCOUNTS<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-				<div class="col-lg-3 service">
-					<i class="fa fa-heart"></i><p>100% SATISFACTION<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-			</div><! --/row -->
-			<div class="row mt">
-				<div class="col-lg-3 service">
-					<i class="fa fa-trophy"></i><p>PREMIUM QUALITY<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-				<div class="col-lg-3 service">
-					<i class="fa fa-globe"></i><p>CLOUD SERVICES<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-				<div class="col-lg-3 service">
-					<i class="fa fa-lock"></i><p>SECURED ACCOUNTS<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-				<div class="col-lg-3 service">
-					<i class="fa fa-thumbs-up"></i><p>100% SATISFACTION<br/><small>LOREM IPSUM DOLOR</small></p>
-					<p class="text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-				</div>
-			</div><! --/row -->
-			
-		</div><! --/container -->
-	</div><! --/servicewrap -->
-	
-	<div id="testimonials">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 mt">
-				
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					    <div class="item active mb centered">
-					      <h3>MARK WEBBER</h3>
-					      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					      <p><img class="img-circle" src="assets/img/pic-t1.jpg" width="80"></p>
-					    </div>
 
-					    <div class="item mb centered">
-					      <h3>PAUL LEVINGSTON</h3>
-					      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					      <p><img class="img-circle" src="assets/img/pic-t2.jpg" width="80"></p>
-					    </div>
-
-					    <div class="item mb centered">
-					      <h3>LUCY LENNIN</h3>
-					      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					      <p><img class="img-circle" src="assets/img/pic-t3.jpg" width="80"></p>
-					    </div>
-
-					  </div>
-					  <!-- Indicators -->
-					  <ol class="carousel-indicators">
-					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					  </ol>
-					</div>
-					  
-				</div><! --/col-lg-8 -->
-			</div><! --/row -->
-		</div><! --/container -->
-	</div><! --/testimonials -->
-	
-	<! -- SERVICE SECTION -->
-	<section id="contact" name="contact"></section>
 	<! -- CONTACT SEPARATOR -->
 	<div class="sep contact" data-stellar-background-ratio="0.5"></div>
 	
 	<div id="contactwrap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<p>CONTACT ME RIGHT NOW!</p>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					<p>
-						<small>5th Avenue, 987<br/>
-						38399, New York,<br/>
-						USA.</small>
-					</p>
-					<p>
-						<small>Tel. 9888-4394<br/>
-						Mail. Hello@coolfolks.com<br/>
-						Skype. NYCDesign
-					</p>
-			
-				</div>
-				
-				<div class="col-lg-6">
-					<form role="form">
-					  <div class="form-group">
-					    <label for="exampleInputName1">Your Name</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
-					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-					    <label for="exampleInputText1">Message</label>
-					    <textarea class="form-control" rows="3"></textarea>
-					  </div>
-					  <button type="submit" class="btn btn-default">Submit</button>
-					</form>
-				</div>
-			
-			</div><! --/row -->
+            	<ul class="nav navbar-nav">
+					<li class="fa-button"><a href="https://www.linkedin.com/profile/view?id=344653707&trk=nav_responsive_tab_profile_pic">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-linkedin fa-stack-2x"></i>
+						</span>
+						</a>
+					</li>
+					<li class="fa-button"><a href="http://github.com/dannyalxndr">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-github fa-stack-2x"></i>
+						</span>
+						</a>
+					</li>
+					<li class="fa-button"><a href="http://twitter.com/dannyalxndr">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-twitter fa-stack-2x"></i>
+						</span>
+						</a>
+					</li>
+					<li class="fa-button"><a href="http://facebook.com/dannyalxndrwrites">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-facebook fa-stack-2x"></i>
+						</span>
+						</a>
+					</li>
+					<li class="fa-button"><a href="http://instagram.com/dannyalxndr_">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-instagram fa-stack-2x"></i>
+						</span>
+						</a>
+					</li>
+					<li></li>
+				</ul>
+			</div><! --/row -->  
+
 		</div><!-- /container -->
 	</div>
+	@stop
 	
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="assets/js/classie.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/smoothscroll.js"></script>
-	<script src="assets/js/jquery.stellar.min.js"></script>
-	<script src="assets/js/fancybox/jquery.fancybox.js"></script>    
-	<script src="assets/js/main.js"></script>
+	@section('bottomscript')
+    
 		<script>
 		$(function(){
 			$.stellar({
@@ -366,5 +136,5 @@
       });
 	   </script>
 
-  </body>
-</html>
+	@stop
+

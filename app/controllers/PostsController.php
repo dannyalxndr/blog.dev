@@ -28,7 +28,7 @@ class PostsController extends BaseController {
 	    	$posts = Post::with('user')->where('title', 'LIKE', '%'. $q .'%')->get();  
 		}
 
-		return View::make('posts.index')->with('posts', $posts);
+		return View::make('posts.posts-index')->with('posts', $posts);
 
 	}
 
@@ -39,7 +39,7 @@ class PostsController extends BaseController {
 	 */
 	public function create()
 	{	
-		return View::make('posts.create-edit');
+		return View::make('layouts.create-edit');
 	}
 
 	/**
@@ -120,7 +120,7 @@ class PostsController extends BaseController {
 	public function edit($id)
 	{
 		$post = Post::find($id);
-		return View::make('posts.create-edit')->with('post', $post);
+		return View::make('layouts.create-edit')->with('post', $post);
 	}
 
 

@@ -24,8 +24,8 @@ class UserTableSeeder extends Seeder {
         DB::table('users')->delete();
 
         $user = new User();
-        $user->email = 'admin@codeup.com';
-        $user->password = Hash::make('adminPass123!');
+        $user->email = $_ENV['ADMIN_USER'];
+        $user->password = Hash::make($_ENV['ADMIN_PASS']);
         $user->save();
     }
 
@@ -42,6 +42,7 @@ class PostTableSeeder extends Seeder {
 			$post = new Post();
 			$post->title = "Post number $i";
 			$post->body = "Body number $i";
+			$post->user_id = 1;
 			$post->save();
 		}		
 	}

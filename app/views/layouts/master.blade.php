@@ -1,57 +1,55 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
     <title>dannyalxndr</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/assets/css/main.css" rel="stylesheet">
-</head>
-<body>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
 
-    <!-- Static navbar -->
-    <div class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav navbar-left">
-				@if (Auth::check())
-						<li>{{ link_to_action('HomeController@logout', 'Log Out') }}</li>
-						<li><a class="dropdown-toggle navbar-brand" href="index" data-toggle="dropdown">{{ Auth::user()->username }}</a></li>			
-				@else
-					<li>{{ link_to_action('HomeController@showLogin', 'Login') }}</li>
-					<!-- <li>{{ link_to_action('HomeController@showRegister','Register') }}</li> -->
-				@endif
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				@if (Auth::check())
-					<li>{{ link_to_action('PostsController@create', 'Create Post') }}</li>
-				@endif
-				<li><a href="/main">Home</a></li>
-				<!-- <li><a href="about">About</a></li>
-				<li><a href="portfolio">Portfolio</a></li> -->
-				<li><a href="/posts">Blog</a></li>
-				<!-- <li><a href="contact">writing</a></li> -->
-			</ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- Menu -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="index.html#home">MENU</a></h1>
+			<i class="fa fa-times menu-close"></i>
+			<a href="/" class="smoothScroll">Home</a>
+			<a href="/#about" class="smoothScroll">About</a>
+			<!-- <a href="/#portfolio" class="smoothScroll">Portfolio</a>
+			<a href="/posts" class="smoothScroll">Blog</a> -->
+			<a href="/#contact" class="smoothScroll">Contact</a>
+
+			<a class="twitter-timeline" href="https://twitter.com/dannyalxndr" data-widget-id="487631138416885760">Tweets by @dannyalxndr</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="fa fa-bars"></i></div>
+
+	</nav>
+
+    <body data-spy="scroll" data-offset="0" data-target="#theMenu">    
     <div>
 	    @if (Session::has('successMessage'))
 	    	<div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
@@ -67,11 +65,15 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="assets/js/classie.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/jquery.stellar.min.js"></script>
+	<script src="assets/js/fancybox/jquery.fancybox.js"></script>    
+	<script src="assets/js/main.js"></script>
 
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/stanley-hover.zoom.js"></script>
-    <script src="/assets/js/stanley-hover.zoom.conf.js"></script>
+    @yield('bottomscript')
     
 </body>
 </html> 
