@@ -14,7 +14,8 @@
 // Route::get('/', 'HomeController@showWelcome');
 // Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
-Route::get('/', 'HomeController@mainPage');
+Route::get('/', 'HomeController@konamiPage');
+Route::get('/main', 'HomeController@mainPage');
 
 Route::get('/sayHello/{name}', 'HomeController@sayHello');
 
