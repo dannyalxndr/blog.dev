@@ -18,35 +18,6 @@
 </head>
 <body>
 
-	<!-- Static navbar -->
-    <div class="navbar second-navbar-inverse navbar-static-top">
-		<div class="container">
-       		<div class="navbar-header">
-          	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-          	</button>
-          	<div class="navbar-collapse collapse">
-          		<ul class="nav navbar-nav navbar-left">
-					@if (Auth::check())
-	          			<li>{{ link_to_action('HomeController@logout', 'Log Out') }}</li>
-	          			<li><a class="navbar-brand" href="index">{{ Auth::user()->username }}</a></li>			
-					@else
-						<li>{{ link_to_action('HomeController@showLogin', 'Login') }}</li>
-						<li>{{ link_to_action('HomeController@showRegister','Register') }}</li>
-					@endif
-				</ul>
-			</div>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
     <!-- Static navbar -->
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
@@ -57,17 +28,26 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-          	@if (Auth::check())
-				<li>{{ link_to_action('PostsController@create', 'Create Post') }}</li>
-			@endif
-            <li><a href="about">About</a></li>
-            <li><a href="portfolio">Portfolio</a></li>
-            <li><a href="/posts">Blog</a></li>
-            <li><a href="contact">poetry</a></li>
-            
-          </ul>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				@if (Auth::check())
+						<li>{{ link_to_action('HomeController@logout', 'Log Out') }}</li>
+						<li><a class="dropdown-toggle navbar-brand" href="index" data-toggle="dropdown">{{ Auth::user()->username }}</a></li>			
+				@else
+					<li>{{ link_to_action('HomeController@showLogin', 'Login') }}</li>
+					<!-- <li>{{ link_to_action('HomeController@showRegister','Register') }}</li> -->
+				@endif
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				@if (Auth::check())
+					<li>{{ link_to_action('PostsController@create', 'Create Post') }}</li>
+				@endif
+				<li><a href="/main">Home</a></li>
+				<!-- <li><a href="about">About</a></li>
+				<li><a href="portfolio">Portfolio</a></li> -->
+				<li><a href="/posts">Blog</a></li>
+				<!-- <li><a href="contact">writing</a></li> -->
+			</ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
@@ -82,44 +62,6 @@
     </div>
 
     @yield('content')
-	
-    <!-- +++++ Footer Section +++++ -->
-    
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h4>My Bunker</h4>
-                    <p>
-                        4734 Bending Grv<br/>
-                        San Antonio, TX 78247 <br/>
-                        210.294.2315
-                    </p>
-                </div><!-- /col-lg-4 -->
-                
-                <div class="col-lg-4">
-                    <h4>My Links</h4>
-                    <p>
-                    	<a href="https://www.linkedin.com/profile/view?id=344653707&trk=nav_responsive_tab_profile_pic">Linkedin</a><br/>
-                    	<a href="https://github.com/dannyalxndr?tab=repositories">GitHub</a><br/>
-
-                        <a href="http://www.twitter.com/dannyalxndr">Twitter</a><br/>
-                        <a href="http://www.instagram.com/dannyalxndr_">Instagram</a><br/>
-                        
-                        
-                        
-                    </p>
-                </div><!-- /col-lg-4 -->
-                
-                <div class="col-lg-4">
-                    <h4>About Danny</h4>
-                    <p>Web Designer and Developer, <br>Writer, Musician, and a winner.</p>
-                </div><!-- /col-lg-4 -->
-            
-            </div>
-        
-        </div>
-    </div>
     
 
     <!-- Bootstrap core JavaScript
@@ -130,5 +72,6 @@
     <script src="/assets/js/jquery.js"></script>
     <script src="/assets/js/stanley-hover.zoom.js"></script>
     <script src="/assets/js/stanley-hover.zoom.conf.js"></script>
+    
 </body>
 </html> 
