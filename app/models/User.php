@@ -32,5 +32,9 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	{
 	    return $this->hasMany('Post');
 	}
+	public function canManagePost($post)
+	{
+		return $this->isAdmin() || $this->id == $post->user_id;
+	}
 
 }
