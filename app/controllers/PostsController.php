@@ -9,6 +9,7 @@ class PostsController extends BaseController {
 
 	    // run auth filter before all methods on this controller except index and show
 	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+
 	}
 
 
@@ -47,9 +48,34 @@ class PostsController extends BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{	
-		return $this->update(null);	
-	}
+    {     
+        $post = new Post();
+        
+        $post->id = Auth::user()->id;
+
+        $validator = Validator::make(Input::all(), Post::$rules);
+
+        if ($validator->fails())
+        {
+            Session::flash('errorMessage', 'There was a problem...');
+            return Redirect::back()->withInput()->withErrors($validator);
+        }
+        else
+        {
+            $post->title = Input::get('title');
+            $post->body = Input::get('body');
+            $post->save();
+
+            if(Input::hasFile('image') && Input::file('image')->isValid())
+            {
+                $post->addUploadedImage(Input::file('image'));
+                $post->save();
+            }
+
+            Session::flash('successMessage', 'Success!!!');
+            return Redirect::action('PostsController@index');
+        }
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -58,44 +84,20 @@ class PostsController extends BaseController {
 	 * @return Response
 	 */
 	public function update($id)
-	{
-		$post = new Post();
-
-		$post->user_id = Auth::user()->id;
-
-		if ($id != null)
-		{
-			$post = Post::find($id);
-		}
-
-		$validator = Validator::make(Input::all(), Post::$rules);
-
-		if ($validator->fails())
-		{
-			Session::flash('errorMessage', 'There were errors submitting your form');
-			return Redirect::back()->withInput()->withErrors($validator);
-		}
-		else 
-		{
-			$post = new Post();
-			$post->title = Input::get('title');
-			$post->body = Input::get('body');
-			$post->save();
-
-
-			if (Input::hasFile('image') && Input::file('image')->isValid()) 
-			{
-				$post->addUploadedImage(Input::file('image'));
-				$post->save();
-			}
-
-
-			Session::flash('successMessage', 'You were successful');
-
-			return Redirect::action('PostsController@show', $post->id);
-		}	
-
-	}
+    {
+        $post = Post::find($id);
+        $post->user_id = Auth::user()->id;
+        $post->title = Input::get('title');
+        $post->body = Input::get('body');
+        $post->save();
+        if(Input::hasFile('image') && Input::file('image')->isValid())
+            {
+                $post->addUploadedImage(Input::file('image'));
+                $post->save();
+            }
+        Session::flash('successMessage', 'Sucess!!!');
+        return Redirect::action('PostsController@index');
+    }
 
 	/**
 	 * Display the specified resource.
